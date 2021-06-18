@@ -1,0 +1,117 @@
+/**
+I procured responsive design with display: flex.
+*/
+
+
+.city-container{
+  height: 220px;
+  width: 220px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: honeydew;
+  margin: 30px;
+  border-radius: 50px;
+  box-shadow: 5px 10px #888888 ;
+  position: relative;
+
+  &:hover{
+    opacity: 0.9;
+  }
+  &.Amsterdam::before{
+    @extend .bg-city;
+    background: url(https://cms.finnair.com/resource/blob/691614/4b2f25f2f1d9572a1bf5445d84ff4e92/amsterdam-main-data.jpg);
+  }
+
+  &.London::before{
+    @extend .bg-city;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcr-c5PRwuJIBf55BBWCFQj7hCwwg1E0VOKA&usqp=CAU);
+  }
+
+  &.Paris::before{
+    @extend .bg-city;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpfL6rRKNmqCfNIEpI-L5meAfxvVjbHD2-3Q&usqp=CAU);
+  }
+
+  &.Rome::before{
+    @extend .bg-city;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlj-qO1Cwv_IntpfOLtUdAmBG44sl8KOxWAg&usqp=CAU);
+  }
+
+  &.Barcelona::before{
+    @extend .bg-city;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCsomYBXbxovjy2s-uQKVqQTEw44fzRT324A&usqp=CAU);
+  }
+}
+
+.bg-city{
+  content: "";
+  background-size: cover;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50px;
+}
+
+
+.city-info{
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.city-name{
+  font-size: 32px;
+  font-weight: bold;
+ }
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg-Clear{
+  background-color: #F7ED96;
+}
+.bg-Clouds{
+  background-color: #c2c9d1;
+}
+.bg-Rain{
+  background-color: #A8D1DF;
+}
+.bg-Snow{
+  background-color: #E8E9ED;
+}
+.bg-Extreme{
+  background-color: #8F4A61;
+}
+
+.bg-Mist{
+  background-color: #A68778;
+}
+
+.city-temperature{
+  margin: 7.5px 7.5px;
+  font-size: 32px;
+}
+
+.city-wind-speed{
+  margin: 7.5px 7.5px;
+}
+.icon-container{
+  display: flex;
+  margin: 7.5px;
+}
+.hourly-forecast{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.hourly-item{
+  font-size: 15px;
+}

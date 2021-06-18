@@ -1,0 +1,14 @@
+.cities{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.cities-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+

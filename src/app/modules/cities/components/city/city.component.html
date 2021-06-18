@@ -1,0 +1,35 @@
+<div *ngIf="showComponent" class="city-container bg-{{weatherState}} {{city.name}}" (click)="onClick(city)"
+     [attr.aria-label]="'show detail for '+ city.name " role="button">
+
+  <div>
+    <span tabindex="-1" class="city-name">{{city.name}}</span>
+  </div>
+  <div class="icon-container">
+    <span [attr.aria-label]="currentTemp +' °C'" role="definition" class="city-temperature">{{currentTemp}} °C </span>
+    <img src="http://openweathermap.org/img/wn/{{weatherIcon}}.png" role="img" [attr.aria-label]="weatherState">
+  </div>
+
+  <div class="city-info">
+    <span [attr.aria-label]="currentWindSpeed + ' m/s'" role="definition"
+          class="city-wind-speed">Wind Speed: {{currentWindSpeed}} m/s</span>
+  </div>
+
+  <div *ngIf="showDetail" class="detail">
+    <span aria-label="Hourly Forecast" role="heading" class="hourly-forecast">Hourly Forecast</span>
+    <div>
+      <div [attr.aria-label]="oneHourLater.hour + ' ' + oneHourLater.temperature + ' °C ' + oneHourLater.windState"
+           role="definition" class="hourly-item">{{oneHourLater.hour}}: {{oneHourLater.temperature}}
+        °C {{oneHourLater.windState}} </div>
+      <div [attr.aria-label]="twoHourLater.hour + ' ' + twoHourLater.temperature + ' °C ' + twoHourLater.windState"
+           role="definition" class="hourly-item">{{twoHourLater.hour}}: {{twoHourLater.temperature}}
+        °C {{twoHourLater.windState}} </div>
+      <div
+        [attr.aria-label]="threeHourLater.hour + ' ' + threeHourLater.temperature + ' °C ' + threeHourLater.windState"
+        role="definition" class="hourly-item">{{threeHourLater.hour}}: {{threeHourLater.temperature}}
+        °C {{threeHourLater.windState}} </div>
+    </div>
+
+  </div>
+
+</div>
+
